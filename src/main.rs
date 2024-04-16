@@ -54,7 +54,7 @@ fn fibonnaci_sum(n: u64) -> u64 {
     for i in 1..(n-1) {
         let fib_num = fibonnaci(i);
         if fib_num % 2 == 0 {
-            even_numbers.push(fibonnaci(i));
+            even_numbers.push(fib_num);
         }
         if fib_num > n {
             break;
