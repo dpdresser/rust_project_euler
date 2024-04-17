@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {  
     use crate::functions::*;
-    
+
     #[test]
     fn test_multiples_of_3_or_5() {
         assert_eq!(type_of(&multiples_of_3_or_5(10)), "u64"); // Returns u64
@@ -21,5 +21,19 @@ mod tests {
         assert_eq!(fibonnaci_sum(1000), 798);
         assert_eq!(fibonnaci_sum(100000), 60696);
         assert_eq!(fibonnaci_sum(4000000), 4613732);
+    }
+
+    #[test]
+    fn test_largest_prime_factor() {
+        let primes = prime_sieve_sundaram(7000);
+        assert_eq!(type_of(&largest_prime_factor(2, &primes)), "usize");
+        assert_eq!(largest_prime_factor(1, &primes), 1);
+        assert_eq!(largest_prime_factor(2, &primes), 2);
+        assert_eq!(largest_prime_factor(3, &primes), 3);
+        assert_eq!(largest_prime_factor(5, &primes), 5);
+        assert_eq!(largest_prime_factor(7, &primes), 7);
+        assert_eq!(largest_prime_factor(8, &primes), 2);
+        assert_eq!(largest_prime_factor(13195, &primes), 29);
+        assert_eq!(largest_prime_factor(600851475143, &primes), 6857);
     }
 }
